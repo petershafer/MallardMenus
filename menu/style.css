@@ -1,0 +1,249 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0;
+  padding-bottom: 30%;
+  background-color: #FFFDD0!important;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+h2 {
+  font-size: 2em!important;
+}
+
+h3 {
+  font-size: 1.6em!important;
+}
+
+.button {
+  font-size: 1em!important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+blockquote > aside {
+  width: auto!important;
+  float: right;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+#page-content {
+  min-height: 100vh;
+  padding-bottom: 3em;
+}
+
+#menu {
+  position: fixed;
+  bottom: 0;
+/*   background-color: #01686a; */
+  background-color: #C41E3A;
+  width: 100%;
+}
+
+#menu-header {
+  padding: 10px;
+  display: flex;
+  user-select: none;
+  box-shadow: 0px 3px 5px -5px black;
+  color: white;
+}
+
+#menu-button {
+  flex: 0 0 auto;
+}
+
+#menu-title {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+#menu-notification {
+  flex: 0 0 auto;
+}
+
+#menu-content {
+  height: 0;
+  overflow: auto;
+  transition: height 0.2s;
+  max-height: 75vh;
+}
+
+.pageBtn {
+/*   background-color: #818401!important; */
+}
+
+#menu-content section {
+  padding: 15px 15px 0 15px;
+}
+
+#menu-content h3 {
+  margin: 5px;
+}
+
+#menu-content p {
+  line-height: 3;
+}
+
+#page-content section {
+  display: none;
+}
+
+#page-content section:first-of-type {
+  /* TODO: Make sure this matches the first button, which is used to derive the title. */
+  display: block;
+}
+
+#page-content blockquote cite:before {
+  content: '';
+  padding-right: 0;
+}
+
+#page-content p {
+  line-height: 1.2;
+  font-size: 0.9em;
+}
+
+#page-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#page-content ul li {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+/* Hide the browser's default checkbox */
+label input {
+  display: none;
+}
+
+.checkmark {
+  font-size: 2em;
+  line-height: 1;
+  padding: 5px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "♡";
+  color: black;
+}
+
+label {
+  animation-delay: 0.3s;
+}
+
+/* Show the checkmark when checked */
+label input:checked ~ .checkmark:after {
+  content: '♥';
+  color: red;
+}
+
+#section-favorites img {
+  max-width: 50%;
+}
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
+
+
+
+/* ***** */
+
+hr {
+  background: #C41E3A!important;
+}
+
+#menu-content hr {
+  background: #FFFDD0;
+}
+
+#menu-content .pageBtn {
+  background-color: #FFFDD0;
+  color: #C41E3A;
+}

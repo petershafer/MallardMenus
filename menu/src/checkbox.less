@@ -1,0 +1,22 @@
+label.favorite {
+  animation-delay: 0.3s;
+  /* Hide the browser's default checkbox */
+  input {
+    display: none;
+  }
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    content: '♥';
+    color: red;
+  }
+  input ~ .checkmark {
+    font-size: 2em;
+    line-height: 1;
+    padding: 5px;
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &:after {
+      content: "♡";
+      color: black;
+    }
+  }
+}

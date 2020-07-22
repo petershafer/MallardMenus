@@ -1,0 +1,45 @@
+
+.pageBtn {
+  background-color: @cardinalred;
+}
+
+#page-content {
+  min-height: 100vh;
+  padding-bottom: 3em;
+  section {
+    display: none;
+  }
+
+  blockquote {
+    border-color: @cardinalred;
+    &:nth-of-type(even) {
+      text-align: left!important;
+      border-left-width: .5em!important;
+      border-right-width: 0!important;
+      padding-left: 1em!important;
+      padding-right: 0!important;
+    }
+    cite:before {
+      content: '';
+      padding-right: 0;
+    }
+    > aside {
+      width: auto!important;
+      float: right;
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
+  p {
+    line-height: 1.2;
+    font-size: 0.9em;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      text-align: center;
+      font-size: 1.6em;
+    }
+  }
+}

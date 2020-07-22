@@ -1,0 +1,50 @@
+#menu {
+  position: fixed;
+  bottom: 0;
+  background-color: @cardinalred;
+  width: 100%;
+
+  #menu-header {
+    padding: 10px;
+    display: flex;
+    user-select: none;
+    box-shadow: 0px 3px 5px -5px black;
+    color: white;
+  }
+
+  #menu-button {
+    flex: 0 0 auto;
+  }
+
+  #menu-title {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  #menu-notification {
+    flex: 0 0 auto;
+  }
+
+  #menu-content {
+    height: 0;
+    overflow: auto;
+    transition: height 0.2s;
+    max-height: 75vh;
+    section {
+      padding: 15px 15px 0 15px;
+    }
+    h3 {
+      margin: 5px;
+    }
+    p {
+      line-height: 3;
+    }
+    hr {
+      background: @base-color;
+    }
+    .pageBtn {
+      background-color: @base-color;
+      color: @cardinalred;
+    }
+  }
+}

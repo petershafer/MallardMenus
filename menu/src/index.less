@@ -1,0 +1,52 @@
+@import 'node_modules/strapless/less/index.less';
+@import (inline) 'node_modules/animate.css/source/_vars.css';
+@import (inline) 'node_modules/animate.css/source/_base.css';
+@import (inline) 'node_modules/animate.css/source/attention_seekers/heartBeat.css';
+
+@import 'menu.less';
+@import 'page.less';
+@import 'checkbox.less';
+
+@base-color: #FFFDD0;
+@cardinalred: #C41E3A;
+
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0;
+  background-color: @base-color!important;
+  .checkerboard (@color1);
+}
+
+h2 {
+  font-size: 2em!important;
+}
+
+h3 {
+  font-size: 1.6em!important;
+}
+
+hr {
+  background: @cardinalred;
+}
+
+.button {
+  font-size: 1em!important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.heavy {
+  font-weight: bold;
+}
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
