@@ -1,0 +1,18 @@
+section {
+    .default(box-shadow);
+
+    padding: @padding/2;
+    .colorize(@main-background);
+    .set-lumafix(@main-background; @gray-darker;);
+    border: 0 solid @lumafix;
+    margin-bottom: @gutter;
+
+    .on-large-phone({
+        padding: @padding;
+    });
+
+    .on-tablet({
+        border-width: 1px;
+        padding: @padding*2;
+    });
+}

@@ -1,0 +1,19 @@
+.on-large-phone(@rules) {
+    @media screen and (min-width: @large-phone) { @rules();}
+}
+
+.on-tablet(@rules) {
+   @media screen and (min-width: @tablet) { @rules();}
+}
+
+.on-desktop(@rules) {
+   @media screen and (min-width: @desktop) { @rules();}
+}
+
+.on-large-desktop(@rules) {
+   @media screen and (min-width: @large-desktop) { @rules();}
+}
+
+.in-print(@rules) {
+   @media print { @rules();}
+}

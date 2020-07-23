@@ -1,0 +1,23 @@
+// always results in white text
+// darkens given background when needed to meet contrast standard
+
+.invert-text-against(@color; @contrast-standard: 4.5;) {
+
+	@iterations: 20;
+
+	.set-contrast-ratio(@color, white);
+	.darken-bg(@color, @contrast-ratio, 1);
+
+	.darken-bg(@bg-color, @contrast-ratio, @index)
+	   when (@contrast-ratio < @contrast-standard)
+		and (@index < @iterations) {
+		@new-bg-color: darken(@bg-color, 5% + @index);
+		.set-contrast-ratio(white, @new-bg-color);
+		.darken-bg(@new-bg-color, @contrast-ratio, @index + 1);
+	}
+
+	.darken-bg(@bg-color, @contrast-ratio, @index) when (default()) {
+		background-color: @bg-color;
+		color: white;
+	}
+}

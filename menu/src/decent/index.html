@@ -1,0 +1,502 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Testing grounds for decent.less</title>
+  <meta name="description" content="Testing grounds for decent.less">
+  <meta name="author" content="Rex Riepe">
+
+  <link rel="stylesheet" href="css/index.css?v=1.0">
+  <!-- <script src="js/scripts.js"></script> -->
+
+</head>
+
+<body>
+    <nav>
+      <h1>
+        <img src="decent-logo.svg" class="logo">
+        Decent
+      </h1>
+
+      <ul>
+        <li><a href="#pattern_library">Patterns</a></li>
+        <li><a href="#icon_library">Icons</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h1>Decent isn't <b class="failure">another component library</b>, it's an environment for making your own* component library.</h1>
+      
+        <p class="feature">Built for the <strong class="success">decent</strong>ralized web, Decent makes using your own stuff easier than using Bigcorp's latest <em>focus-group-approved</em> blues and <em>design-by-committee</em> checkboxes.</p>
+
+        <p class="text-center">
+          Start your UI revolution here:
+        </p>
+        <p class="text-center">
+          <button class="action">Get the code</button> <button class="info">Read the docs</button> 
+        </p>
+
+        <p class="text-center">
+          <a class="powered-by" href="http://www.lesscss.org" >Powered by <img src="less_logo.png" class="less_logo"></a>
+        </p>
+      
+        <p><em>* The "yet another library" complainers will blame you, not us.</em></p>
+      </section>
+        
+        <section>
+          <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="decentless_0"></a>decent.less</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">A Less library for smarter component styling</p>
+<h2 class="code-line" data-line-start=5 data-line-end=6 ><a id="Setup_and_testing_5"></a>Setup and testing</h2>
+<ol>
+<li class="has-line-data" data-line-start="7" data-line-end="8">Run ‘python -m SimpleHTTPServer’ in the decent directory.</li>
+<li class="has-line-data" data-line-start="8" data-line-end="9">Follow the directions there (or just go to localhost:8000)</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10">Edit index.html or the less, then refresh to test stuff.</li>
+<li class="has-line-data" data-line-start="10" data-line-end="11">index.html isn’t the public splash page for github but you can put that kinda content there if you’d like. It’s really just a scratchpad. Test-style setups (gray-scale contrasting table for example) are good here too.</li>
+</ol>
+<h2 class="code-line" data-line-start=13 data-line-end=14 ><a id="Compiling_the_Less_13"></a>Compiling the Less</h2>
+<ol>
+<li class="has-line-data" data-line-start="15" data-line-end="17">Run ‘lessc index.less css/index.css’.</li>
+</ol>
+<hr>
+<h1 class="code-line" data-line-start=19 data-line-end=20 ><a id="Core_ideas_19"></a>Core ideas</h1>
+<h2 class="code-line" data-line-start=21 data-line-end=22 ><a id="Accessbility_21"></a>Accessbility</h2>
+<p class="has-line-data" data-line-start="23" data-line-end="24">Decent aims to preserve and emphasize accessibility.</p>
+<h3 class="code-line" data-line-start=25 data-line-end=26 ><a id="Color_contrast_25"></a>Color contrast</h3>
+<ul>
+<li class="has-line-data" data-line-start="26" data-line-end="27">Mixins ensure developers meet WCAG standards</li>
+<li class="has-line-data" data-line-start="27" data-line-end="29">Mixins ensure design consistency</li>
+</ul>
+<h3 class="code-line" data-line-start=29 data-line-end=30 ><a id="Lean_performance_29"></a>Lean performance</h3>
+<ul>
+<li class="has-line-data" data-line-start="30" data-line-end="31">Decent allows for a leaner DOM, which makes everything (CSS, JS) faster</li>
+<li class="has-line-data" data-line-start="31" data-line-end="33">Decent itself compiles quickly, picking the right colors out of millions in seconds</li>
+</ul>
+<h2 class="code-line" data-line-start=33 data-line-end=34 ><a id="Environment_33"></a>Environment</h2>
+<p class="has-line-data" data-line-start="35" data-line-end="36">Decent is a fuller coding environment for Less.</p>
+<h3 class="code-line" data-line-start=37 data-line-end=38 ><a id="HTML__CSS_concepts_37"></a>HTML &amp; CSS concepts</h3>
+<ul>
+<li class="has-line-data" data-line-start="38" data-line-end="39">All HTML elements have a file</li>
+<li class="has-line-data" data-line-start="39" data-line-end="41">All CSS properties have a variable</li>
+</ul>
+<h3 class="code-line" data-line-start=41 data-line-end=42 ><a id="Richer_mixins_41"></a>Richer mixins</h3>
+<ul>
+<li class="has-line-data" data-line-start="42" data-line-end="43">Each mixin has its own file</li>
+<li class="has-line-data" data-line-start="43" data-line-end="45">Mixins use import statements to list dependencies</li>
+</ul>
+<h2 class="code-line" data-line-start=45 data-line-end=46 ><a id="Design_fundamentals_45"></a>Design fundamentals</h2>
+<p class="has-line-data" data-line-start="47" data-line-end="48">Decent gives designers fundamental tools for building UIs.</p>
+<h3 class="code-line" data-line-start=49 data-line-end=50 ><a id="Typography_49"></a>Typography</h3>
+<h3 class="code-line" data-line-start=51 data-line-end=52 ><a id="Color_51"></a>Color</h3>
+<h3 class="code-line" data-line-start=53 data-line-end=54 ><a id="Patterns_53"></a>Patterns</h3>
+<h2 class="code-line" data-line-start=55 data-line-end=56 ><a id="Semantic_colors_55"></a>Semantic colors</h2>
+<p class="has-line-data" data-line-start="57" data-line-end="58">Decent uses very few classes. Semantic classes, one of the few exceptions, come with an inherent color association.</p>
+<p class="has-line-data" data-line-start="59" data-line-end="60">Palette colors</p>
+<ul>
+<li class="has-line-data" data-line-start="60" data-line-end="61"><strong>action</strong>: A version of the base color</li>
+<li class="has-line-data" data-line-start="61" data-line-end="62"><strong>reaction</strong>: A complement to action</li>
+<li class="has-line-data" data-line-start="62" data-line-end="64"><strong>alternate</strong>: A CMYK print-style highlight color</li>
+</ul>
+<p class="has-line-data" data-line-start="64" data-line-end="65">Informational colors</p>
+<ul>
+<li class="has-line-data" data-line-start="65" data-line-end="66"><strong>info</strong>: An info-conveying blue</li>
+<li class="has-line-data" data-line-start="66" data-line-end="67"><strong>warning</strong>: An urgent info-conveying orange</li>
+<li class="has-line-data" data-line-start="67" data-line-end="69"><strong>accent</strong>: An attention-drawing but neutral color</li>
+</ul>
+<p class="has-line-data" data-line-start="69" data-line-end="70">Transactional colors</p>
+<ul>
+<li class="has-line-data" data-line-start="70" data-line-end="71"><strong>action</strong>: A reassuring green</li>
+<li class="has-line-data" data-line-start="71" data-line-end="72"><strong>reaction</strong>: An alarming red</li>
+<li class="has-line-data" data-line-start="72" data-line-end="73"><strong>highlight</strong>: A CMYK print-style highlight color</li>
+</ul>
+        </section>
+        <section id="decent_elements">
+          <h2>Some paragraphs</h2>
+          <p class="action">This is an <strong>action</strong> paragraph.</p>
+          <p class="reaction">This is a <strong>reaction</strong> paragraph.</p>
+          <p class="alternate">This is an <strong>alternate</strong> paragraph.</p>
+          <p class="info icon-info">This is an <strong>info</strong> paragraph.</p>
+          <p class="warning">This is a <strong>warning</strong> paragraph.</p>
+          <p class="accent">This is an <strong>accent</strong> paragraph.</p>
+          <p class="success">This is a <strong>success</strong> paragraph.</p>
+          <p class="failure">This is a <strong>failure</strong> paragraph.</p>
+          <p class="highlight">This is a <strong>highlight</strong> paragraph.</p>
+          <p class="default">This is a <strong>default</strong> paragraph.</p>
+
+          <p>This is a regular paragraph.</p>
+
+          <h2>Some buttons</h2>
+          <p class="text-center">
+            <button class="action">Action</button>
+            <button class="reaction">Reaction</button>
+            <button class="alternate">Alternate</button>
+          </p>
+          <p class="text-center">
+            <button class="info">Info</button>
+            <button class="warning">Warning</button>
+            <button class="accent">Accent</button>
+            <button class="highlight">Highlight</button>
+          </p>
+          <p class="text-center">
+            <button class="success">Success</button>
+            <button class="failure">Failure</button>
+            <button>Default</button>
+          </p>
+          
+          
+          
+          
+      </section>
+
+      <section id="icon_library">
+        <h1>Icon library</h1>
+        <p>Decent has a whole bunch of icons.</p>
+
+        
+<div class="icon activity"></div>
+<div class="icon alert-circle"></div>
+<div class="icon alert-triangle"></div>
+<div class="icon archive"></div>
+<div class="icon arrow-back"></div>
+<div class="icon arrow-circle-down"></div>
+<div class="icon arrow-circle-left"></div>
+<div class="icon arrow-circle-right"></div>
+<div class="icon arrow-circle-up"></div>
+<div class="icon arrow-down"></div>
+<div class="icon arrow-downward"></div>
+<div class="icon arrow-forward"></div>
+<div class="icon arrowhead-down"></div>
+<div class="icon arrowhead-left"></div>
+<div class="icon arrowhead-right"></div>
+<div class="icon arrowhead-up"></div>
+<div class="icon arrow-ios-back"></div>
+<div class="icon arrow-ios-downward"></div>
+<div class="icon arrow-ios-forward"></div>
+<div class="icon arrow-ios-upward"></div>
+<div class="icon arrow-left"></div>
+<div class="icon arrow-right"></div>
+<div class="icon arrow-up"></div>
+<div class="icon arrow-upward"></div>
+<div class="icon at"></div>
+<div class="icon attach-2"></div>
+<div class="icon attach"></div>
+<div class="icon award"></div>
+<div class="icon backspace"></div>
+<div class="icon bar-chart-2"></div>
+<div class="icon bar-chart"></div>
+<div class="icon battery"></div>
+<div class="icon behance"></div>
+<div class="icon bell-off"></div>
+<div class="icon bell"></div>
+<div class="icon bluetooth"></div>
+<div class="icon bookmark"></div>
+<div class="icon book-open"></div>
+<div class="icon book"></div>
+<div class="icon briefcase"></div>
+<div class="icon browser"></div>
+<div class="icon brush"></div>
+<div class="icon bulb"></div>
+<div class="icon calendar"></div>
+<div class="icon camera"></div>
+<div class="icon car"></div>
+<div class="icon cast"></div>
+<div class="icon charging"></div>
+<div class="icon checkmark-circle-2"></div>
+<div class="icon checkmark-circle"></div>
+<div class="icon checkmark-square-2"></div>
+<div class="icon checkmark-square"></div>
+<div class="icon checkmark"></div>
+<div class="icon chevron-down"></div>
+<div class="icon chevron-left"></div>
+<div class="icon chevron-right"></div>
+<div class="icon chevron-up"></div>
+<div class="icon clipboard"></div>
+<div class="icon clock"></div>
+<div class="icon close-circle"></div>
+<div class="icon close-square"></div>
+<div class="icon close"></div>
+<div class="icon cloud-download"></div>
+<div class="icon cloud-upload"></div>
+<div class="icon code-download"></div>
+<div class="icon code"></div>
+<div class="icon collapse"></div>
+<div class="icon color-palette"></div>
+<div class="icon color-picker"></div>
+<div class="icon compass"></div>
+<div class="icon copy"></div>
+<div class="icon corner-down-left"></div>
+<div class="icon corner-down-right"></div>
+<div class="icon corner-left-down"></div>
+<div class="icon corner-left-up"></div>
+<div class="icon corner-right-down"></div>
+<div class="icon corner-right-up"></div>
+<div class="icon corner-up-left"></div>
+<div class="icon corner-up-right"></div>
+<div class="icon credit-card"></div>
+<div class="icon crop"></div>
+<div class="icon cube"></div>
+<div class="icon diagonal-arrow-left-down"></div>
+<div class="icon diagonal-arrow-left-up"></div>
+<div class="icon diagonal-arrow-right-down"></div>
+<div class="icon diagonal-arrow-right-up"></div>
+<div class="icon done-all"></div>
+<div class="icon download"></div>
+<div class="icon droplet-off"></div>
+<div class="icon droplet"></div>
+<div class="icon edit-2"></div>
+<div class="icon edit"></div>
+<div class="icon email"></div>
+<div class="icon expand"></div>
+<div class="icon external-link"></div>
+<div class="icon eye-off-2"></div>
+<div class="icon eye-off"></div>
+<div class="icon eye"></div>
+<div class="icon facebook"></div>
+<div class="icon file-add"></div>
+<div class="icon file-remove"></div>
+<div class="icon file"></div>
+<div class="icon file-text"></div>
+<div class="icon film"></div>
+<div class="icon flag"></div>
+<div class="icon flash-off"></div>
+<div class="icon flash"></div>
+<div class="icon flip-2"></div>
+<div class="icon flip"></div>
+<div class="icon folder-add"></div>
+<div class="icon folder-remove"></div>
+<div class="icon folder"></div>
+<div class="icon funnel"></div>
+<div class="icon gift"></div>
+<div class="icon github"></div>
+<div class="icon globe-2"></div>
+<div class="icon globe-3"></div>
+<div class="icon globe"></div>
+<div class="icon google"></div>
+<div class="icon grid"></div>
+<div class="icon hard-drive"></div>
+<div class="icon hash"></div>
+<div class="icon headphones"></div>
+<div class="icon heart"></div>
+<div class="icon home"></div>
+<div class="icon image-2"></div>
+<div class="icon image"></div>
+<div class="icon inbox"></div>
+<div class="icon info"></div>
+<div class="icon keypad"></div>
+<div class="icon layers"></div>
+<div class="icon layout"></div>
+<div class="icon link-2"></div>
+<div class="icon linkedin"></div>
+<div class="icon link"></div>
+<div class="icon list"></div>
+<div class="icon lock"></div>
+<div class="icon log-in"></div>
+<div class="icon log-out"></div>
+<div class="icon map"></div>
+<div class="icon maximize"></div>
+<div class="icon menu-2"></div>
+<div class="icon menu-arrow"></div>
+<div class="icon menu"></div>
+<div class="icon message-circle"></div>
+<div class="icon message-square"></div>
+<div class="icon mic-off"></div>
+<div class="icon mic"></div>
+<div class="icon minimize"></div>
+<div class="icon minus-circle"></div>
+<div class="icon minus-square"></div>
+<div class="icon minus"></div>
+<div class="icon monitor"></div>
+<div class="icon moon"></div>
+<div class="icon more-horizontal"></div>
+<div class="icon more-vertical"></div>
+<div class="icon move"></div>
+<div class="icon music"></div>
+<div class="icon navigation-2"></div>
+<div class="icon navigation"></div>
+<div class="icon npm"></div>
+<div class="icon options-2"></div>
+<div class="icon options"></div>
+<div class="icon pantone"></div>
+<div class="icon paper-plane"></div>
+<div class="icon pause-circle"></div>
+<div class="icon people"></div>
+<div class="icon percent"></div>
+<div class="icon person-add"></div>
+<div class="icon person-delete"></div>
+<div class="icon person-done"></div>
+<div class="icon person-remove"></div>
+<div class="icon person"></div>
+<div class="icon phone-call"></div>
+<div class="icon phone-missed"></div>
+<div class="icon phone-off"></div>
+<div class="icon phone"></div>
+<div class="icon pie-chart-2"></div>
+<div class="icon pie-chart"></div>
+<div class="icon pin"></div>
+<div class="icon play-circle"></div>
+<div class="icon plus-circle"></div>
+<div class="icon plus-square"></div>
+<div class="icon plus"></div>
+<div class="icon power"></div>
+<div class="icon pricetags"></div>
+<div class="icon printer"></div>
+<div class="icon question-mark-circle"></div>
+<div class="icon question-mark"></div>
+<div class="icon radio-button-off"></div>
+<div class="icon radio-button-on"></div>
+<div class="icon radio"></div>
+<div class="icon recording"></div>
+<div class="icon refresh"></div>
+<div class="icon repeat"></div>
+<div class="icon rewind-left"></div>
+<div class="icon rewind-right"></div>
+<div class="icon save"></div>
+<div class="icon scissors"></div>
+<div class="icon search"></div>
+<div class="icon settings-2"></div>
+<div class="icon settings"></div>
+<div class="icon shake"></div>
+<div class="icon share"></div>
+<div class="icon shield-off"></div>
+<div class="icon shield"></div>
+<div class="icon shopping-bag"></div>
+<div class="icon shopping-cart"></div>
+<div class="icon shuffle-2"></div>
+<div class="icon shuffle"></div>
+<div class="icon skip-back"></div>
+<div class="icon skip-forward"></div>
+<div class="icon slash"></div>
+<div class="icon smartphone"></div>
+<div class="icon smiling-face"></div>
+<div class="icon speaker"></div>
+<div class="icon square"></div>
+<div class="icon star"></div>
+<div class="icon stop-circle"></div>
+<div class="icon sun"></div>
+<div class="icon swap"></div>
+<div class="icon sync"></div>
+<div class="icon text"></div>
+<div class="icon thermometer-minus"></div>
+<div class="icon thermometer-plus"></div>
+<div class="icon thermometer"></div>
+<div class="icon toggle-left"></div>
+<div class="icon toggle-right"></div>
+<div class="icon trash-2"></div>
+<div class="icon trash"></div>
+<div class="icon trending-down"></div>
+<div class="icon trending-up"></div>
+<div class="icon tv"></div>
+<div class="icon twitter"></div>
+<div class="icon umbrella"></div>
+<div class="icon undo"></div>
+<div class="icon unlock"></div>
+<div class="icon upload"></div>
+<div class="icon video-off"></div>
+<div class="icon video"></div>
+<div class="icon volume-down"></div>
+<div class="icon volume-mute"></div>
+<div class="icon volume-off"></div>
+<div class="icon volume-up"></div>
+<div class="icon wifi-off"></div>
+<div class="icon wifi"></div>
+<div class="clearfix"></div>
+        <p>The icons are Eva Icons.</p>
+      </section>
+
+      <section id="pattern_library">
+        <h1>Pattern library</h1>
+        <p>Decent has a whole bunch of patterns.</p>
+        <p>
+          <input type="text">
+        </p>
+        
+        <textarea name="testarea" id="" cols="30" rows="10"></textarea>
+        <div class="pattern-example anchors-away"></div>
+        <div class="pattern-example architect"></div>
+        <div class="pattern-example autumn"></div>
+        <div class="pattern-example aztec"></div>
+        <div class="pattern-example bamboo"></div>
+        <div class="pattern-example bank-note"></div>
+        <div class="pattern-example bathroom-floor"></div>
+        <div class="pattern-example bevel-circle"></div>
+        <div class="pattern-example boxes"></div>
+        <div class="pattern-example brick-wall"></div>
+        <div class="pattern-example bubbles"></div>
+        <div class="pattern-example cage"></div>
+        <div class="pattern-example charlie-brown"></div>
+        <div class="pattern-example church-on-sunday"></div>
+        <div class="pattern-example circles-and-squares"></div>
+        <div class="pattern-example circuit-board"></div>
+        <div class="pattern-example connections"></div>
+        <div class="pattern-example current"></div>
+        <div class="pattern-example curtain"></div>
+        <div class="pattern-example cutout"></div>
+        <div class="pattern-example death-star"></div>
+        <div class="pattern-example diagonal-lines"></div>
+        <div class="pattern-example diagonal-stripes"></div>
+        <div class="pattern-example dominos"></div>
+        <div class="pattern-example endless-clouds"></div>
+        <div class="pattern-example eyes"></div>
+        <div class="pattern-example falling-triangles"></div>
+        <div class="pattern-example flipped-diamonds"></div>
+        <div class="pattern-example floor-tile"></div>
+        <div class="pattern-example formal-invitation"></div>
+        <div class="pattern-example glamorous"></div>
+        <div class="pattern-example graph-paper"></div>
+        <div class="pattern-example groovy"></div>
+        <div class="pattern-example happy-intersection"></div>
+        <div class="pattern-example heavy-rain"></div>
+        <div class="pattern-example hexagons"></div>
+        <div class="pattern-example hideout"></div>
+        <div class="pattern-example houndstooth"></div>
+        <div class="pattern-example i-like-food"></div>
+        <div class="pattern-example intersecting-circles"></div>
+        <div class="pattern-example jigsaw"></div>
+        <div class="pattern-example jupiter"></div>
+        <div class="pattern-example kiwi"></div>
+        <div class="pattern-example leaf"></div>
+        <div class="pattern-example line-in-motion"></div>
+        <div class="pattern-example lips"></div>
+        <div class="pattern-example lisbon"></div>
+        <div class="pattern-example melt"></div>
+        <div class="pattern-example moroccan"></div>
+        <div class="pattern-example morphing-diamonds"></div>
+        <div class="pattern-example overcast"></div>
+        <div class="pattern-example overlapping-circles"></div>
+        <div class="pattern-example overlapping-diamonds"></div>
+        <div class="pattern-example overlapping-hexagons"></div>
+        <div class="pattern-example parkay-floor"></div>
+        <div class="pattern-example piano-man"></div>
+        <div class="pattern-example pie-factory"></div>
+        <div class="pattern-example pixel-dots"></div>
+        <div class="pattern-example plus"></div>
+        <div class="pattern-example polka-dots"></div>
+        <div class="pattern-example rails"></div>
+        <div class="pattern-example rain"></div>
+        <div class="pattern-example random-shapes"></div>
+        <div class="pattern-example rounded-plus-connected"></div>
+        <div class="pattern-example signal"></div>
+        <div class="pattern-example skulls"></div>
+        <div class="pattern-example slanted-stars"></div>
+        <div class="pattern-example squares-in-squares"></div>
+        <div class="pattern-example squares"></div>
+        <div class="pattern-example stamp-collection"></div>
+        <div class="pattern-example steel-beams"></div>
+        <div class="pattern-example stripes"></div>
+        <div class="pattern-example temple"></div>
+        <div class="pattern-example texture"></div>
+        <div class="pattern-example tic-tac-toe"></div>
+        <div class="pattern-example tiny-checkers"></div>
+        <div class="pattern-example volcano-lamp"></div>
+        <div class="pattern-example wallpaper"></div>
+        <div class="pattern-example wiggle"></div>
+        <div class="pattern-example x-equals"></div>
+        <div class="pattern-example yyy"></div>
+        <div class="pattern-example zig-zag"></div>
+      </section>
+    </main>
+    
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+// averages a list of colors
+// sets result to @average
+
+.set-average(@colors) {
+    @iterations: length(@colors);
+  
+    .find-average(extract(@colors, 1), 1);
+  
+    .find-average(@color, @index) when (@index <= @iterations) {
+      @this-color: extract(@colors, @index);
+      @last-color: @color;
+      @weight: 100% * (1/@index);
+      @new-average: mix(@this-color, @last-color, @weight);
+  
+      .find-average(@new-average, @index + 1);
+    }
+  
+    .find-average(@color, @index) when (default()) {
+      @average: @color;
+    }
+  }
+  

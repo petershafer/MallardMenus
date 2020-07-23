@@ -1,0 +1,25 @@
+// colors text against a background
+
+.color-text(@color: @action; @text-background: @main-background; @contrast-standard: 4.5;) {
+  
+    @iterations: 50;
+  
+    .set-contrast-ratio(@color, @text-background);
+    .set-tone(@text-background);
+    .adjust-text(@contrast-ratio, 1);
+  
+    .adjust-text(@contrast-ratio, @index)
+               when (@contrast-ratio < @contrast-standard)
+                and (@index < @iterations) {
+  
+      @new-text-color: mix(@tone, @color, 2.5%*@index);
+  
+        .set-contrast-ratio(@text-background, @new-text-color);
+        .adjust-text(@contrast-ratio, @index + 1);
+    }
+  
+    .adjust-text(@contrast-ratio, @index) when (default()) {
+        color: mix(@tone, @color, 2.5%*@index);
+    }
+}
+  

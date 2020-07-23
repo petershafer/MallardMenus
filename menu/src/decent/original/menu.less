@@ -1,7 +1,7 @@
 #menu {
   position: fixed;
   bottom: 0;
-  background-color: @cardinalred;
+  background-color: @action;
   width: 100%;
 
   #menu-header {
@@ -9,7 +9,7 @@
     display: flex;
     user-select: none;
     box-shadow: 0px 3px 5px -5px black;
-    color: white;
+    .contrast(@action);
   }
 
   #menu-button {
@@ -40,11 +40,7 @@
       line-height: 3;
     }
     hr {
-      background: @base-color;
-    }
-    .pageBtn {
-      background-color: @base-color;
-      color: @cardinalred;
+      background: @action;
     }
   }
 }

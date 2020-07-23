@@ -1,0 +1,47 @@
+// defaults for inline and block level elements
+// these rules generate a lot of CSS but cover tons of HTML edge cases
+
+.inline-elements({
+  .default(max-width);
+  each(@semantic-color-names, { &.@{value} { .color-text(@@value);};});
+});
+
+.block-level-elements({
+  each(@semantic-color-names, { &.@{value} { .colorize(@@value);};});
+
+  .semantic-classes({
+      .default(padding);
+  });
+});
+
+
+// utility classes
+
+.feature {
+  padding: @padding*2;
+  font-size: 150%;
+  line-height: 1.5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-user-select {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.hide, .hidden { display: none !important;}
+
+.clearfix {
+  clear: both;
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+

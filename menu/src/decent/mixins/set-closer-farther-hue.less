@@ -1,0 +1,30 @@
+// compares c1 and c2 to a given color, assigns a @farther and @closer
+// comparison is hue
+
+// TODO: genericize and make hue an option
+
+.set-closer-farther-hue(@compare, @c1, @c2) {
+  
+    .set-difference-m-c1() {
+        @difference-m-c1: abs(hue(@compare) - hue(@c1));
+    }
+  
+    .set-difference-m-c2() {
+        @difference-m-c2: abs(hue(@compare) - hue(@c2));
+    }
+  
+    .resolve() when (@difference-m-c2 > @difference-m-c1) {
+        @farther: @c2;
+        @closer: @c1;
+    }
+  
+    .resolve() when (default()) {
+        @farther: @c1;
+        @closer: @c2;
+    }
+  
+    .set-difference-m-c1();
+    .set-difference-m-c2();
+  
+    .resolve();
+  }

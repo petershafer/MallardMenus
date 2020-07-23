@@ -1,0 +1,34 @@
+.set-closer-farther(@compare, @c1, @c2) {
+    // compares c1 and c2 to a given color, assigns a @farther and @closer
+    // distance is RGB space units
+  
+    .set-distance-m-c1() {
+      .set-distance(@compare, @c1);
+      @distance-m-c1: @distance;
+    }
+  
+    .set-distance-m-c2() {
+      .set-distance(@compare, @c2);
+      @distance-m-c2: @distance;
+    }
+  
+    .resolve() when (@distance-m-c2 > @distance-m-c1) {
+      @farther: @c2;
+      @closer: @c1;
+    }
+  
+    .resolve() when (default()) {
+      @farther: @c1;
+      @closer: @c2;
+    }
+  
+    .set-distance-m-c1();
+    .set-distance-m-c2();
+  
+    .resolve();
+  }
+  
+  .set-farther-closer(@compare, @c1, @c2) {
+    // just another closer-farther
+    .set-closer-farther(@compare, @c1, @c2);
+  }

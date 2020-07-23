@@ -1,0 +1,38 @@
+// sets @lumafix to a version of @color with luma similar to @compare
+
+.set-lumafix(@color; @compare: @base-color; @strength: 100%;) {
+
+    @iterations: 24;
+
+    // .settings() keeps lumafix from flipping back and forth 
+    // between shading and tinting
+
+    .settings() when (luma(@color) > luma(@compare)) {
+        @tone: black;
+    }
+
+    .settings() when (luma(@compare) >= luma(@color)) {
+        @tone: white;
+    }
+
+    .lumafix(@color-to-fix, @compare, @index) when (@index <= @iterations)
+                                        and (luma(@color-to-fix) < luma(@compare))
+                                        and (@tone = white) {
+        @new-color: lighten(@color-to-fix, .5%*@index);
+        .lumafix(@new-color, @compare, @index + 1);
+    }
+
+    .lumafix(@color-to-fix, @compare, @index) when (@index <= @iterations)
+                                        and (luma(@color-to-fix) > luma(@compare))
+                                        and (@tone = black) {
+        @new-color: darken(@color-to-fix, .5%*@index);
+        .lumafix(@new-color, @compare, @index + 1);
+    }
+
+    .lumafix(@color-to-fix, @compare, @index) when (default()) {
+        @lumafix: mix(@color, @color-to-fix, (100% - @strength));
+    }
+
+    .settings();
+    .lumafix(@color, @compare, 1);
+}

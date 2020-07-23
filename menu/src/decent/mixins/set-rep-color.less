@@ -1,0 +1,51 @@
+// this sets a representative color -- @rep-color -- out of a @list 
+// @rep-color is the color in the list closest to the given @color
+// right now this measures by hue
+
+// TODO: fix @rep-color-number, which only works once now
+
+@import (reference) "set-closer-farther-hue";
+
+.set-rep-color(@color, @list) {
+	
+	@iterations: length(@list) - 1;
+
+	.tournament(@champ, @contender, @index) when (@index <= @iterations) {
+
+	  .set-closer-farther-hue(@color, @champ, @contender);
+
+	  .set-winner() when (@champ = @closer) {
+		@winner: @champ;
+	  }
+
+	  .set-winner() when (@champ = @closer) and (@index = 1) {
+		@winner: @champ;
+		@first_win: @index;
+	  }
+
+	  .set-winner() when (@contender = @closer) {
+		@winner: @contender;
+		@first_win: @index;
+	  }
+	  
+	  .set-winner();
+
+	  @next-contender: extract(@list, @index + 2);
+
+	  // iterate the tournament
+	  .tournament(@winner, @next-contender, @index + 1);
+
+	}
+
+	.tournament(@champ, @contender, @index) when (@index > @iterations) {
+
+	  @rep-color: @champ;   
+	  @rep-color-number: @first_win;
+
+	}
+
+	@first-champ: extract(@list, 1);
+	@first-contender: extract(@list, 2);
+
+	.tournament(@first-champ, @first-contender, 1);
+}

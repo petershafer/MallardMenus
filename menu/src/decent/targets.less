@@ -1,0 +1,57 @@
+// these parametric mixins allow you to target a whole class of elements at a time
+
+.headline-elements(@rules) {
+    h1, h2, h3, h4, h5, h6 { @rules();}
+}
+
+.button-elements(@rules) {
+    button,
+    .button, 
+    .pageBtn, 
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] { @rules();}
+}
+
+.block-level-elements(@rules) {
+    p,
+    ol, 
+    ul, 
+    pre,
+    address,
+    blockquote,
+    dl,
+    div,
+    fieldset,
+    form,
+    hr,
+    main,
+    section,
+    table {
+        @rules();
+    }
+}
+
+.inline-elements(@rules) {
+    b, big, button, i, small, tt,
+    abbr, acronym, cite, code, em, strong,
+    a, br, img, map, object, span, sub, sup,
+    input, label, select, textarea {
+        @rules();
+    }
+}
+
+.semantic-classes(@rules) {
+    &.action,
+    &.reaction,
+    &.alternate,
+    &.info,
+    &.warning,
+    &.accent,
+    &.success,
+    &.failure,
+    &.highlight,
+    &.default {
+        @rules();
+    }
+}

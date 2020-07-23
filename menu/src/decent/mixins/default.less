@@ -1,0 +1,10 @@
+// indicates a default attribute by intent
+// any valid CSS property will work
+
+.default(@attribute) when (@attribute = color) {
+    .contrast(@background);
+}
+
+.default(@attribute) when (default()) {
+    @{attribute}: @@attribute;
+}

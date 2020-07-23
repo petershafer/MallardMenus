@@ -1,0 +1,24 @@
+.dots(@base: @base-color; @scale: 1;) {
+    @font-size: 20px;
+    .set-tone(@base);
+    @c-color: mix(@base, @tone, 50%);
+    @fg-base: @c-color;
+    @bg-base: @base;
+  
+    @fg-red: round(red(@fg-base));
+    @fg-green: round(green(@fg-base));
+    @fg-blue: round(blue(@fg-base));
+    @fg: ~"rgb(@{fg-red},@{fg-green},@{fg-blue})";
+  
+    @bg-red: round(red(@bg-base));
+    @bg-green: round(green(@bg-base));
+    @bg-blue: round(blue(@bg-base));
+    @bg: ~"rgb(@{bg-red},@{bg-green},@{bg-blue})";
+  
+    @width: 10px;
+    @height: @width;
+    @pattern-dots:~"%3Csvg xmlns='http://www.w3.org/2000/svg' width='@{width}' height='@{width}'%3E %3Crect width='@{width}' height='@{width}' fill='@{bg}'/%3E %3Crect width='1' height='1' fill='@{fg}'/%3E %3C/svg%3E";
+    background-image: url("data:image/svg+xml,@{pattern-dots}");
+    background-size: (@scale * @width), (@scale * @height);
+    background-position: 5px center;
+}

@@ -1,0 +1,6 @@
+// makes any element into the given color
+
+.colorize(@background; @contrast-standard: 7; @property: color; @mode: auto;) {
+    background-color: @background;
+    .contrast(@background; @contrast-standard; @property; @mode;);
+}

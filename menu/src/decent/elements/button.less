@@ -1,0 +1,148 @@
+.button-elements({
+    .default(padding);
+    .default(margin-bottom);
+    .default(border);
+    .default(border-radius);
+    .default(font-size);
+    .default(box-shadow);
+
+    @button-default: average(@main-background, @gray-lighter);
+  
+    display: inline;
+    .button-color(@default);
+    width: 100%;
+    max-width: @aside-width;
+    // line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    outline: none;
+    white-space: nowrap;
+    text-decoration: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    .no-user-select;
+    border: 1px solid @gray-dark;
+    transform: scale(1);
+    transition: .08s linear;
+
+    &:focus {
+      box-shadow: 0 1px 2px rgba(red(@gray-darker), green(@gray-darker), blue(@gray-darker), .5);
+    }
+
+    &:active {
+      transform: scale(.98);
+      box-shadow: 0 1px 1px rgba(red(@gray-darker), green(@gray-darker), blue(@gray-darker), .25);
+    }
+
+    // TODO: better font conventions
+    & when (@serif = true) {
+      font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    }
+
+    & when (@sans-serif = true) {
+        font-family:  "Helvetica Neue",
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                sans-serif;
+    }
+
+    & when (@monospace = true) {
+        font-family:
+          "SFMono-Regular",
+          Consolas,
+          "Liberation Mono",
+          Menlo,
+          Courier,
+          monospace;
+    }
+
+    .on-tablet({
+      width: auto;
+      margin-right: 1ch;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    });
+
+    each(@semantic-color-names, {
+      @color: @@value;
+      &.@{value} { .button-color(@color);}
+    });
+});
+
+.button-color(@color; @cr: 9;) {
+
+  .set-button-tone(@button-bg) {
+    .set-contrast-ratio(@button-bg, white);
+
+    .set() when (@contrast-ratio >= 3.3) {
+      @button-tone: white;
+    }
+
+    .set() when (@contrast-ratio < 3.3) {
+      @button-tone: black;
+    }
+
+    .set();
+  }
+  
+  .set-button-tone(@color);
+  .contrast(@color; @cr/3; border-color; shade;);
+
+  & when (@button-tone = white) {
+    // .colorize(@color; @cr; @mode: tint;);
+    color: white;
+    background: @color;
+
+    &:focus {
+      .contrast-fill(@color; 1.5; @mode: tint;);
+      //.colorize(@fill; @cr; @mode: tint;);
+      color: white;
+      background: @fill;
+    }
+
+    &:active {
+      .contrast-fill(@color; 1.15; @mode: shade;);
+      //.colorize(@fill; @cr; @mode: tint;);
+      color: white;
+      background: @fill;
+    }
+  }
+
+  & when (@button-tone = black) {
+    .colorize(@color; @cr; @mode: shade;);
+
+    &:focus {
+      .contrast-fill(@color; 1.6; @mode: tint;);
+      & when (luma(@fill) > 94%) {
+        @darker: average(@color, @fill);
+        .colorize(@darker; @cr; @mode: shade;);
+        
+      }
+
+      & when (luma(@fill) <= 94%) {
+        .colorize(@fill; @cr; @mode: shade;);
+      }  
+    }
+  
+    &:active {
+      .contrast-fill(@color; 1.15; @mode: shade;);
+      .colorize(@fill; @cr; @mode: shade;);
+    }
+  }
+}
+
+.button-elements({
+ 
+  &:focus {outline:none;}
+  &::-moz-focus-inner {border:0;}
+});
+
+

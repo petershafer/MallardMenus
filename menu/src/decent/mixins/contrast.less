@@ -1,0 +1,137 @@
+@import (reference) "set-contrast-ratio";
+@import (reference) "set-tone";
+
+// TODO: preferential tinting - the mixin shouldn't always pick a tone strategy with the higher contrast ceiling
+// if the ceiling is higher but still over the contrast standard, preferential tint would allow the user to
+// specify the tone that shows up in that case
+
+.contrast(
+        @color: @background; 
+        @contrast-standard: 7;
+        @property: color; 
+        @mode: auto;
+        ) {
+    // adds tone to background color until contrast standard is met
+	// uses result as text color (or @property if specified)
+
+	@start: 0%;
+    @iterations: 50;
+    
+    // this expression describes the contrasting color that will be used for text
+	@contrast: mix(@tone, @color, @start + @index*2);
+    @index: 1;
+
+    // these settings will get PERFECT contrast ratio results, or pretty close
+    // uncomment them here to override the above, but beware huge compile times
+    // @start: 0;
+    // @iterations: 1000;
+    // @contrast: mix(@tone, @color, @start + @index*.1);
+
+
+    // tone is the color mixed into the background to lighten or darken the text
+    
+    .tone(@color) when (@mode = tint) { @tone: white;}
+
+	.tone(@color) when (@mode = shade) { @tone: black;}
+
+	.tone(@color) when (default()) { .set-tone(@color);}
+
+    // this iterator does the work of finding the contrastful text
+    .apply-contrast(@contrast-ratio, @tone, @index)
+       when (@contrast-ratio < @contrast-standard) 
+		and (@index < @iterations) { 
+        // this sets a new @contrast-ratio
+        .set-contrast-ratio(@color, @contrast); 
+        // this runs the next iteration
+		.apply-contrast(@contrast-ratio; @tone; @index + 1);
+	}
+
+    // the actual CSS output for this whole mixin is this one line
+	.apply-contrast(@contrast-ratio, @tone, @index) when (default()) {
+        @{property}: @contrast;
+
+        // show which elements didn't make the contrast standard (in debug)
+        & when (@contrast-ratio < @contrast-standard) 
+           and (@debug = true) 
+           and (@property = color) {
+            &:after {
+                content:"Under standard! (@{contrast-ratio} < @{contrast-standard})";
+                font-size: 80%;
+                background: @failure;
+                color: white;
+            }
+        }
+    }
+    
+    // this works like .set-tone if no mode is specified
+    .tone(@color);
+    
+    // output the text color rule
+    .apply-contrast(1, @tone, 1);
+}
+
+
+.contrast-fill(
+        @color: @background; 
+        @contrast-standard: 7;
+        @property: color; 
+        @mode: auto;
+        ) {
+    // adds tone to background color until contrast standard is met
+	// uses result as text color (or @property if specified)
+
+	@start: 0%;
+    @iterations: 200;
+    
+    // this expression describes the contrasting color that will be used for text
+	@contrast: mix(@tone, @color, @start + @index*.5);
+    @index: 1;
+
+    // these settings will get PERFECT contrast ratio results, or pretty close
+    // uncomment them here to override the above, but beware huge compile times
+    // @start: 0;
+    // @iterations: 1000;
+    // @contrast: mix(@tone, @color, @start + @index*.1);
+
+
+    // tone is the color mixed into the background to lighten or darken the text
+    
+    .tone(@color) when (@mode = tint) { @tone: white;}
+
+	.tone(@color) when (@mode = shade) { @tone: black;}
+
+	.tone(@color) when (default()) { .set-tone(@color);}
+
+    // this iterator does the work of finding the contrastful text
+    .apply-contrast(@contrast-ratio, @tone, @index)
+       when (@contrast-ratio < @contrast-standard) 
+		and (@index < @iterations) { 
+        // this sets a new @contrast-ratio
+        .set-contrast-ratio(@color, @contrast); 
+        // this runs the next iteration
+		.apply-contrast(@contrast-ratio; @tone; @index + 1);
+	}
+
+    // the actual CSS output for this whole mixin is this one line
+	.apply-contrast(@contrast-ratio, @tone, @index) when (default()) {
+        @fill: @contrast;
+
+        // show which elements didn't make the contrast standard (in debug)
+        & when (@contrast-ratio < @contrast-standard) 
+           and (@debug = true) 
+           and (@property = color) {
+            &:after {
+                content:"Under standard! (@{contrast-ratio} < @{contrast-standard})";
+                font-size: 80%;
+                background: @failure;
+                color: white;
+            }
+        }
+    }
+    
+    // this works like .set-tone if no mode is specified
+    .tone(@color);
+    
+    // output the text color rule
+    .apply-contrast(1, @tone, 1);
+}

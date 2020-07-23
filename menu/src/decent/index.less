@@ -1,0 +1,94 @@
+// environment
+// all of these files only output variables/mixins for the environment, no CSS rules
+
+@import (reference) "properties";
+@import (reference) "settings";
+@import (reference) "viewports";
+@import (reference) "targets";
+@import (reference) "colors/semantic";
+@import (reference) "colors/grays";
+@import (reference) "colors/turbo";
+// TODO: add some sort of color palette feature
+// @import "icons";
+@import (reference) "patterns"; 
+@import (reference) "mixins/mixins";
+
+// css output
+// edit these files directly to change the appearance of HTML elements
+
+@import "reset";
+@import "utilities";
+
+@import "elements/body";
+@import "elements/main";
+@import "elements/nav";
+@import "elements/section";
+@import "elements/headline";
+@import "elements/p";
+@import "elements/a";
+@import "elements/form";
+@import "elements/fieldset";
+@import "elements/ol";
+@import "elements/ul";
+@import "elements/span";
+@import "elements/mark";
+@import "elements/b";
+@import "elements/button";
+@import "elements/pre";
+@import "elements/code";
+@import "elements/blockquote";
+@import "elements/textarea";
+// TODO: support all HTML elements
+
+@import "original/checkbox.less";
+@import "original/menu.less";
+@import "original/page.less";
+
+@color1: @action;
+
+@background: #FFFDD0;
+@base-color: #C41E3A;
+
+@cardinalred: @base-color;
+
+/* CSS files add styling rules to your content */
+
+body {
+  // font-family: helvetica, arial, sans-serif;
+  // margin: 0;
+  background-color: @background;
+  .pattern(floor-tile, @background);
+}
+
+// h2 {
+//   font-size: 2em!important;
+// }
+
+// h3 {
+//   font-size: 1.6em!important;
+// }
+
+hr {
+  background: @action;
+  margin-bottom: @margin;
+}
+
+.button {
+  // font-size: 1em!important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.heavy {
+  font-weight: bold;
+}
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
