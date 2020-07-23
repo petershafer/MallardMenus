@@ -83,18 +83,19 @@ x-equals,
 yyy,
 zig-zag;
 
-each(@patterns-all, {
-    // this outputs everything in an escaped SVG format
-    // .invoke-pattern(@value);
-    // this is just for the demo site
-    .@{value} {
-        .pattern(@value; @default;);
+// each(@patterns-all, {
+//     // this outputs everything in an escaped SVG format
+//     // .invoke-pattern(@value);
 
-        &:after {
-            content: "@{value}";
-        }
-    }
-});
+//     // this is just for the demo site
+//     .@{value} {
+//         .pattern(@value; @default;);
+
+//         &:after {
+//             content: "@{value}";
+//         }
+//     }
+// });
 
 // .invoke-pattern(@pattern-name) {
 //     .@{pattern-name} { background: data-uri('image/svg+xml;charset=UTF-8', 'svg/@{pattern-name}.svg')}
