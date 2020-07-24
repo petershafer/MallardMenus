@@ -3,8 +3,10 @@ section {
 
     padding: @padding/2;
     .colorize(@main-background);
-    .set-lumafix(@main-background; @gray-darker;);
-    border: 0 solid @lumafix;
+    border: 1px solid transparent;
+    .contrast(@main-background; 3; border-color);
+    border-left-width: 0;
+    border-right-width: 0;
     margin-bottom: @gutter;
 
     .on-large-phone({

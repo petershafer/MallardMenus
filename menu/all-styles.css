@@ -668,11 +668,14 @@ main {
 @media screen and (min-width: 57rem) {
 }
 section {
-  box-shadow: 0 1px 2px rgba(3, 3, 3, 0.5);
+  box-shadow: 0 1px 2px rgba(3, 3, 3, 0.25);
   padding: 0.5rem;
   background-color: white;
   color: #525252;
-  border: 0 solid #000000;
+  border: 1px solid transparent;
+  border-color: #8f8f8f;
+  border-left-width: 0;
+  border-right-width: 0;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 38rem) {
@@ -789,9 +792,9 @@ input[type="submit"] {
   border: 1px solid #9c9c9c;
   border-radius: 8px;
   font-size: 20px;
-  box-shadow: 0 1px 2px rgba(3, 3, 3, 0.5);
+  box-shadow: 0 1px 2px rgba(3, 3, 3, 0.25);
   display: inline;
-  border-color: #2d3a32;
+  border-color: #516a5a;
   color: white;
   background: #6a8b77;
   width: 100%;
@@ -808,7 +811,7 @@ input[type="submit"] {
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  border: 1px solid #363636;
+  border: 1px solid #696969;
   transform: scale(1);
   transition: 0.08s linear;
   font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
@@ -846,7 +849,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   transform: scale(0.98);
-  box-shadow: 0 1px 1px rgba(3, 3, 3, 0.25);
+  box-shadow: 0 1px 1px rgba(3, 3, 3, 0.125);
 }
 @media screen and (min-width: 57rem) {
   button,
@@ -873,7 +876,7 @@ button.action,
 input[type="button"].action,
 input[type="reset"].action,
 input[type="submit"].action {
-  border-color: #2f070e;
+  border-color: #8d162a;
   color: white;
   background: #c41e3a;
 }
@@ -901,7 +904,7 @@ button.reaction,
 input[type="button"].reaction,
 input[type="reset"].reaction,
 input[type="submit"].reaction {
-  border-color: #2a4509;
+  border-color: #487710;
   color: white;
   background: #5f9d15;
 }
@@ -929,7 +932,7 @@ button.alternate,
 input[type="button"].alternate,
 input[type="reset"].alternate,
 input[type="submit"].alternate {
-  border-color: #082d3a;
+  border-color: #0f5d77;
   color: white;
   background: #157ea0;
 }
@@ -957,7 +960,7 @@ button.info,
 input[type="button"].info,
 input[type="reset"].info,
 input[type="submit"].info {
-  border-color: #0b3b4d;
+  border-color: #146b8b;
   color: white;
   background: #1a8db6;
 }
@@ -985,7 +988,7 @@ button.warning,
 input[type="button"].warning,
 input[type="reset"].warning,
 input[type="submit"].warning {
-  border-color: #765418;
+  border-color: #b88225;
   background-color: #eca72f;
   color: #130d04;
 }
@@ -1013,7 +1016,7 @@ button.accent,
 input[type="button"].accent,
 input[type="reset"].accent,
 input[type="submit"].accent {
-  border-color: #1d2b5b;
+  border-color: #3855b1;
   color: white;
   background: #4c72ef;
 }
@@ -1041,7 +1044,7 @@ button.success,
 input[type="button"].success,
 input[type="reset"].success,
 input[type="submit"].success {
-  border-color: #207136;
+  border-color: #31aa52;
   background-color: #3ed969;
   color: #091e0f;
 }
@@ -1069,7 +1072,7 @@ button.failure,
 input[type="button"].failure,
 input[type="reset"].failure,
 input[type="submit"].failure {
-  border-color: #3d0e01;
+  border-color: #952203;
   color: white;
   background: #ca2e04;
 }
@@ -1097,7 +1100,7 @@ button.highlight,
 input[type="button"].highlight,
 input[type="reset"].highlight,
 input[type="submit"].highlight {
-  border-color: #178a8a;
+  border-color: #22cccc;
   background-color: #2bffff;
   color: #093838;
 }
@@ -1125,7 +1128,7 @@ button.default,
 input[type="button"].default,
 input[type="reset"].default,
 input[type="submit"].default {
-  border-color: #2d3a32;
+  border-color: #516a5a;
   color: white;
   background: #6a8b77;
 }
@@ -1312,7 +1315,10 @@ label.favorite input ~ .checkmark:after {
   line-height: 3;
 }
 #menu #menu-content hr {
-  background: #c41e3a;
+  margin-bottom: 1rem;
+}
+#menu-btn {
+  cursor: pointer;
 }
 #page-content {
   padding-bottom: 3em;
@@ -1443,8 +1449,9 @@ body {
   background-position: center center;
 }
 hr {
-  background: #c41e3a;
-  margin-bottom: 1rem;
+  background-color: #c41e3a;
+  border-color: #c41e3a;
+  margin-bottom: 2rem;
 }
 .button {
   max-width: 100%;

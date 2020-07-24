@@ -22,7 +22,7 @@
     touch-action: manipulation;
     cursor: pointer;
     .no-user-select;
-    border: 1px solid @gray-dark;
+    border: 1px solid @gray-medium;
     transform: scale(1);
     transition: .08s linear;
 
@@ -32,7 +32,7 @@
 
     &:active {
       transform: scale(.98);
-      box-shadow: 0 1px 1px rgba(red(@gray-darker), green(@gray-darker), blue(@gray-darker), .25);
+      box-shadow: 0 1px 1px rgba(red(@gray-darker), green(@gray-darker), blue(@gray-darker), .125);
     }
 
     // TODO: better font conventions
@@ -94,7 +94,7 @@
   }
   
   .set-button-tone(@color);
-  .contrast(@color; @cr/3; border-color; shade;);
+  .contrast(@color; @cr/6; border-color; shade;);
 
   & when (@button-tone = white) {
     // .colorize(@color; @cr; @mode: tint;);
