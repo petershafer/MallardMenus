@@ -1,15 +1,30 @@
 #menu {
+  @menu-bar-bg: @action;
+  @menu-bg: average(@main-background, @background);
+
   position: fixed;
   bottom: 0;
-  background-color: @action;
+  .colorize(@menu-bar-bg);
   width: 100%;
+
+  .button-elements({
+    box-shadow: none;
+  });
+
+  section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-bottom: @padding;
+  }
 
   #menu-header {
     padding: 10px;
     display: flex;
     user-select: none;
     box-shadow: 0px 3px 5px -5px black;
-    .contrast(@action);
+    .contrast(@menu-bar-bg);
   }
 
   #menu-button {
@@ -30,6 +45,8 @@
     overflow: auto;
     transition: height 0.2s;
     max-height: 75vh;
+    .colorize(@menu-bg);
+    .pattern(texture; @menu-bg;);
     section {
       padding: 15px 15px 0 15px;
     }

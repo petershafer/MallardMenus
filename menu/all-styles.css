@@ -1280,7 +1280,23 @@ label.favorite input ~ .checkmark:after {
   position: fixed;
   bottom: 0;
   background-color: #c41e3a;
+  color: #ffffff;
   width: 100%;
+}
+#menu button,
+#menu .button,
+#menu .pageBtn,
+#menu input[type="button"],
+#menu input[type="reset"],
+#menu input[type="submit"] {
+  box-shadow: none;
+}
+#menu section {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
 }
 #menu #menu-header {
   padding: 10px;
@@ -1304,6 +1320,10 @@ label.favorite input ~ .checkmark:after {
   overflow: auto;
   transition: height 0.2s;
   max-height: 75vh;
+  color: #52514a;
+  background-color: #fffee8;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%224%22%20height%3D%224%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20fill%3D%22rgb(240,239,218)%22%20d%3D%22M1%203h1v1H1V3zm2-2h1v1H3V1z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+  background-position: center center;
 }
 #menu #menu-content section {
   padding: 15px 15px 0 15px;
