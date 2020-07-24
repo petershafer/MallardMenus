@@ -6,8 +6,14 @@ label.favorite {
   }
   /* Show the checkmark when checked */
   input:checked ~ .checkmark:after {
-    content: '♥';
+    content: '';
+    display: inline-block;
     color: red;
+    width: 48px;
+    height: 48px;
+    // background: black;
+    .icon(heart; @failure;);
+    cursor: pointer;
   }
   input ~ .checkmark {
     font-size: 2em;
@@ -15,8 +21,15 @@ label.favorite {
     padding: 5px;
     /* Create the checkmark/indicator (hidden when not checked) */
     &:after {
-      content: "♡";
+      content: "";
       color: black;
+      display: inline-block;
+      color: red;
+      width: 48px;
+      height: 48px;
+      // background: black;
+      .icon(heart; @gray-lighter;);
+      cursor: pointer;
     }
   }
 }

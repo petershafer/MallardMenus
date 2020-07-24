@@ -1,3 +1,9 @@
+.icon.heart {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3d%22rgb(196,31,59)%22%3E%3Cg%20data-name%3D%22Layer%202%22%3E%3Cpath%20d%3D%22M12%2021a1%201%200%2001-.71-.29l-7.77-7.78a5.26%205.26%200%20010-7.4%205.24%205.24%200%20017.4%200L12%206.61l1.08-1.08a5.24%205.24%200%20017.4%200%205.26%205.26%200%20010%207.4l-7.77%207.78A1%201%200%200112%2021z%22%20data-name%3D%22heart%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-position: center center;
+  width: 48px;
+  height: 48px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -636,6 +642,7 @@ body {
   color: #525143;
   background-attachment: fixed;
   padding-top: 5rem;
+  padding-bottom: 5rem;
   -webkit-overflow-scrolling: touch;
   font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
   font-size: 16px;
@@ -1240,8 +1247,14 @@ label.favorite input {
   display: none;
 }
 label.favorite input:checked ~ .checkmark:after {
-  content: '♥';
+  content: '';
+  display: inline-block;
   color: red;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3d%22rgb(202,47,5)%22%3E%3Cg%20data-name%3D%22Layer%202%22%3E%3Cpath%20d%3D%22M12%2021a1%201%200%2001-.71-.29l-7.77-7.78a5.26%205.26%200%20010-7.4%205.24%205.24%200%20017.4%200L12%206.61l1.08-1.08a5.24%205.24%200%20017.4%200%205.26%205.26%200%20010%207.4l-7.77%207.78A1%201%200%200112%2021z%22%20data-name%3D%22heart%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-position: center center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
 }
 label.favorite input ~ .checkmark {
   font-size: 2em;
@@ -1250,8 +1263,15 @@ label.favorite input ~ .checkmark {
   /* Create the checkmark/indicator (hidden when not checked) */
 }
 label.favorite input ~ .checkmark:after {
-  content: "♡";
+  content: "";
   color: black;
+  display: inline-block;
+  color: red;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3d%22rgb(206,206,206)%22%3E%3Cg%20data-name%3D%22Layer%202%22%3E%3Cpath%20d%3D%22M12%2021a1%201%200%2001-.71-.29l-7.77-7.78a5.26%205.26%200%20010-7.4%205.24%205.24%200%20017.4%200L12%206.61l1.08-1.08a5.24%205.24%200%20017.4%200%205.26%205.26%200%20010%207.4l-7.77%207.78A1%201%200%200112%2021z%22%20data-name%3D%22heart%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-position: center center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
 }
 #menu {
   position: fixed;
@@ -1295,7 +1315,6 @@ label.favorite input ~ .checkmark:after {
   background: #c41e3a;
 }
 #page-content {
-  min-height: 100vh;
   padding-bottom: 3em;
   max-width: 55rem;
   margin: 0 auto;
@@ -1306,19 +1325,11 @@ label.favorite input ~ .checkmark:after {
 #page-content blockquote {
   position: relative;
   min-height: 100px;
-  border-color: #C41E3A;
+  border-color: #c41e3a;
+  padding-left: 1rem;
   padding-right: 60px;
-}
-#page-content blockquote:nth-of-type(even) {
-  text-align: left!important;
-  border-left-width: 0.5em !important;
-  border-right-width: 0!important;
-  padding-left: 1em!important;
-  padding-right: 0!important;
-}
-#page-content blockquote cite:before {
-  content: '';
-  padding-right: 0;
+  border-left: 0.5em solid #c41e3a;
+  margin-bottom: 1rem;
 }
 #page-content blockquote > aside {
   width: auto!important;
@@ -1338,6 +1349,14 @@ label.favorite input ~ .checkmark:after {
   line-height: 66px;
 }
 /* CSS files add styling rules to your content */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+}
 body {
   background-color: #FFFDD0;
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20width%3D%2230px%22%20height%3D%2230px%22%20viewBox%3D%220%200%2030%2030%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2040%20(33762)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3Efloor-tile%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22floor-tile%22%20fill%3D%22rgb(240,238,196)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C10%20L10%2C10%20L10%2C20%20L0%2C20%20L0%2C10%20Z%20M10%2C0%20L20%2C0%20L20%2C10%20L10%2C10%20L10%2C0%20Z%22%20id%3D%22Combined-Shape%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");

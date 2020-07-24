@@ -9,7 +9,7 @@
 @import (reference) "colors/grays";
 @import (reference) "colors/turbo";
 // TODO: add some sort of color palette feature
-// @import "icons";
+@import "icons";
 @import (reference) "patterns"; 
 @import (reference) "mixins/mixins";
 
@@ -49,9 +49,13 @@
 @background: #FFFDD0;
 @base-color: #C41E3A;
 
-@cardinalred: @base-color;
+@cardinalred: @action;
 
 /* CSS files add styling rules to your content */
+
+.headline-elements({
+  margin-bottom: .5em;
+});
 
 body {
   // font-family: helvetica, arial, sans-serif;

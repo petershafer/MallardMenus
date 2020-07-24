@@ -1,5 +1,5 @@
 #page-content {
-  min-height: 100vh;
+  // min-height: 100vh;
   padding-bottom: 3em;
   max-width: @column-width;
   margin: 0 auto;
@@ -11,19 +11,12 @@
   blockquote {
     position: relative;
     min-height: 100px;
-    border-color: @cardinalred;
+    border-color: @action;
+    padding-left: @padding;
     padding-right: 60px; // make room for aside element
-    &:nth-of-type(even) {
-      text-align: left!important;
-      border-left-width: .5em!important;
-      border-right-width: 0!important;
-      padding-left: 1em!important;
-      padding-right: 0!important;
-    }
-    cite:before {
-      content: '';
-      padding-right: 0;
-    }
+    border-left: .5em solid @action;
+    margin-bottom: @margin;
+
     > aside {
       width: auto!important;
       // float: right;
