@@ -1,0 +1,16 @@
+{
+  "name": "dweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^16.3.0",
+    "read-excel-file": "^4.0.6",
+    "slugify": "^1.4.5"
+  }
+}
