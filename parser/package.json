@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jsdom": "^16.3.0",
-    "read-excel-file": "^4.0.6",
+    "read-excel-file": "^5.5.1",
     "slugify": "^1.4.5"
   }
 }
